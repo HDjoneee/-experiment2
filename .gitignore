@@ -1,0 +1,8 @@
+build/
+*.class
+*.jar
+output/
+.idea/
+.vscode/
+*.log
+

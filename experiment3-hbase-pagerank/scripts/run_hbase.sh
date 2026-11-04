@@ -9,5 +9,6 @@ javac -encoding UTF-8 -classpath "$(hbase classpath)" \
   -d "$BUILD_DIR" "$PROJECT_DIR/src/hbase/HBaseOperations.java"
 
 jar -cvf "$PROJECT_DIR/build/hbase-operations.jar" -C "$BUILD_DIR" .
-hbase jar "$PROJECT_DIR/build/hbase-operations.jar" HBaseOperations demo
+java -classpath "$PROJECT_DIR/build/hbase-operations.jar:$(hbase classpath)" \
+  HBaseOperations demo
 

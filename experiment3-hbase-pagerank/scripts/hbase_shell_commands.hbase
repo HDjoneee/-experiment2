@@ -1,6 +1,5 @@
-# 1. 列出全部表并查看表结构
+# 1. 列出全部表
 list
-describe 'Student'
 
 # 2. 创建 Student 表并插入数据（原题 Student 表中的 Mary 学号按 SC 表修正为 2015002）
 create 'Student', 'Info', 'Score'
@@ -19,6 +18,7 @@ put 'Student', 'Lisi', 'Info:S_Sex', 'male'
 put 'Student', 'Lisi', 'Info:S_Age', '24'
 put 'Student', 'Lisi', 'Score:Math', '98'
 put 'Student', 'Lisi', 'Score:Computer Science', '95'
+describe 'Student'
 
 # 3. 创建 Course 表并插入数据
 create 'Course', 'Info'

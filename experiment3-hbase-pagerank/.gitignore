@@ -1,0 +1,8 @@
+build/
+output/
+*.class
+*.jar
+.idea/
+.vscode/
+__pycache__/
+

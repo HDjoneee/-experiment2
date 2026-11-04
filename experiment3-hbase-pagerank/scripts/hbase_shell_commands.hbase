@@ -1,0 +1,50 @@
+# 1. 列出全部表并查看表结构
+list
+describe 'Student'
+
+# 2. 创建 Student 表并插入数据（原题 Student 表中的 Mary 学号按 SC 表修正为 2015002）
+create 'Student', 'Info', 'Score'
+put 'Student', 'Zhangsan', 'Info:S_No', '2015001'
+put 'Student', 'Zhangsan', 'Info:S_Sex', 'male'
+put 'Student', 'Zhangsan', 'Info:S_Age', '23'
+put 'Student', 'Zhangsan', 'Score:Math', '86'
+put 'Student', 'Zhangsan', 'Score:English', '69'
+put 'Student', 'Mary', 'Info:S_No', '2015002'
+put 'Student', 'Mary', 'Info:S_Sex', 'female'
+put 'Student', 'Mary', 'Info:S_Age', '22'
+put 'Student', 'Mary', 'Score:Computer Science', '77'
+put 'Student', 'Mary', 'Score:English', '99'
+put 'Student', 'Lisi', 'Info:S_No', '2015003'
+put 'Student', 'Lisi', 'Info:S_Sex', 'male'
+put 'Student', 'Lisi', 'Info:S_Age', '24'
+put 'Student', 'Lisi', 'Score:Math', '98'
+put 'Student', 'Lisi', 'Score:Computer Science', '95'
+
+# 3. 创建 Course 表并插入数据
+create 'Course', 'Info'
+put 'Course', '123001', 'Info:C_Name', 'Math'
+put 'Course', '123001', 'Info:C_Credit', '2.0'
+put 'Course', '123002', 'Info:C_Name', 'Computer Science'
+put 'Course', '123002', 'Info:C_Credit', '5.0'
+put 'Course', '123003', 'Info:C_Name', 'English'
+put 'Course', '123003', 'Info:C_Credit', '3.0'
+
+# 4. 显示记录、浏览列、统计行数
+scan 'Student'
+scan 'Student', {COLUMNS => ['Score']}
+scan 'Student', {COLUMNS => ['Score:Math']}
+count 'Student'
+
+# 5. 添加/删除列族或列
+alter 'Student', NAME => 'Contact'
+put 'Student', 'Zhangsan', 'Contact:Email', 'zhangsan@example.com'
+delete 'Student', 'Zhangsan', 'Contact:Email'
+alter 'Student', NAME => 'Contact', METHOD => 'delete'
+
+# 6. 清空指定表（演示时建议对临时表执行）
+create 'TempTable', 'Info'
+put 'TempTable', 'row1', 'Info:value', 'demo'
+truncate 'TempTable'
+disable 'TempTable'
+drop 'TempTable'
+

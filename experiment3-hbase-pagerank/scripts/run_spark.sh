@@ -12,5 +12,3 @@ spark-submit --master local[*] \
   "$PROJECT_DIR/src/spark/pagerank_spark.py" \
   "file://$INPUT_ABS" "file://$OUTPUT_ABS" 10
 
-cat "$OUTPUT_ABS"/part-*
-

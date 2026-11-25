@@ -28,4 +28,3 @@ T027	rice,bread,butter
 T028	rice,coffee,sugar
 T029	milk,bread,tea
 T030	bread,eggs,butter,sugar
-
